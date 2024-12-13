@@ -113,3 +113,51 @@
     background-repeat: no-repeat;
     overflow: hidden;
 }
+
+.tertiaryPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* mesma altura que as outras seções */
+    width: 100vw;
+    margin: 0;
+    background-image: url('/images/03.png'); // Terceiro background
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.quaternaryPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Altura igual à de outras seções */
+    width: 100vw;  /* Largura igual à de outras seções */
+    margin: 0;
+    padding: 0; /* Certifique-se de que não há padding adicional */
+    background-image: url('/images/04.png'); /* Quarto background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-sizing: border-box; /* Para garantir que margin e padding não afetem o layout */
+}
+
+
+.quinaryPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* mesma altura que as outras seções */
+    width: 100vw;
+    margin: 0;
+    background-image: url('/images/05.png'); // Quinto background
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}

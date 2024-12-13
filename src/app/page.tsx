@@ -28,6 +28,39 @@ export default function Home() {
           />
         </div>
       </div>
+      <div className={styles.tertiaryPage}> {/* Terceira seção com novo background */}
+        <p className={styles.subtitle}>Terceira Seção</p>
+        <h1 className={styles.mainText}>Mais Conteúdo</h1>
+        <div className={styles.logoContainer}>
+          <img
+            src="/images/logobranco.png"
+            alt="Logo"
+            className={styles.logo}
+          />
+        </div>
+      </div>
+      <div className={styles.quaternaryPage}> {/* Quarta seção com novo background */}
+        <p className={styles.subtitle}>Quarta Seção</p>
+        <h1 className={styles.mainText}>Último Conteúdo</h1>
+        <div className={styles.logoContainer}>
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            className={styles.logo}
+          />
+        </div>
+      </div>
+      <div className={styles.quinaryPage}> {/* Quinta seção com novo background */}
+        <p className={styles.subtitle}>Quinta Seção</p>
+        <h1 className={styles.mainText}>Conteúdo Adicional</h1>
+        <div className={styles.logoContainer}>
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            className={styles.logo}
+          />
+        </div>
+      </div>
     </>
   );
 }
