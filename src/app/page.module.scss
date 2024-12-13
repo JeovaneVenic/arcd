@@ -41,8 +41,8 @@
     color: #000;
     margin-bottom: 0.5rem;
     position: relative;
-    left: -415px;
-    top: -20px;
+    left: -403px;
+    top: -90px;
     opacity: 0;
     animation: slideIn 1.5s forwards ease-in-out;
 }
@@ -53,8 +53,8 @@
     color: #000;
     margin-bottom: 0.5rem;
     position: relative;
-    left: -424px;
-    top: -43px;
+    left: -412px;
+    top: -120px;
     opacity: 0;
     animation: slideIn 2s forwards ease-in-out;
 }
@@ -99,6 +99,53 @@
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Barra amarela horizontal atrás do .paragrafo1 */
+/* Barra amarela atrás do .paragrafo1 */
+.secondaryPage .paragrafo1::before {
+    content: '';
+    position: absolute;
+    top: -8px;  /* Barra posicionada atrás do texto */
+    left: -5.5px;  /* Barra posicionada atrás do texto */
+    width: 103%;
+    height: 36px;  /* Espessura da barra */
+    background-color: yellow;
+    z-index: -1; /* Barra amarela ficará atrás do texto */
+}
+
 .secondaryPage {
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
     background-image: url('/images/02.png');
@@ -116,50 +163,32 @@
     overflow: visible;
 }
 
-/* Barra amarela horizontal atrás do .paragrafo1 */
-.secondaryPage .paragrafo1::before {
-    content: '';
-    position: absolute;
-    top: -8;  /* Barra posicionada atrás do texto */
-    left: -5.5;
-    width: 103%;
-    height: 36px;  /* Espessura da barra */
-    background-color: yellow;
-    z-index: -1; /* Barra amarela ficará atrás do texto */
-}
-
-/* Classe .bolacha */
+/* Classe .paragrafo1 */
 .secondaryPage .paragrafo1 {
-    position: absolute;
-    top: 23.7%;
-    left: 46.6%;
-    transform: translate(0, -50%);
+    position: relative; /* Mudado para relative para permitir o movimento flexível */
     font-size: 1.2rem;
+    top: -165%;
+    left: 29%;
     line-height: 1.2;
     text-align: left;
     font-weight: 560;
-    font-family: 'Gilroy', sans-serif; /* Aplica a fonte Poppins */ 
+    font-family: 'Gilroy', sans-serif; 
     color: #000;
-    z-index: 1; /* Texto do .paragrafo1 ficará acima da barra amarela */
+    z-index: 1; /* Texto ficará acima da barra amarela */
     letter-spacing: 4.5px;
 }
 
-
-    .paragrafo2{
-        position: absolute; 
-        top: 31%; 
-        left: 45.0%; 
-        transform: translate(0, -50%); 
-        font-size: 3.5rem; 
-        line-height: 1.2;
-        text-align: left; 
-        font-weight: 800; 
-        font-family: 'Gilroy', sans-serif; /* Aplica a fonte Poppins */ 
-        letter-spacing: -3px;
-        color:#000
-        
-    }
-
+/* Classe .paragrafo2 */
+.secondaryPage .paragrafo2 {
+    position: relative; /* Mudado para relative para permitir o movimento flexível */
+    font-size: 3.5rem;
+    top: -100%;
+    left: 11.7%;
+    font-weight: 800; 
+    font-family: 'Gilroy', sans-serif; 
+    letter-spacing: -3px;
+    color: #000;
+}
 
 /* Barra amarela à direita */
 .secondaryPage::after {
@@ -174,82 +203,275 @@
 }
 
 /* Contêiner de conteúdo */
-.contentWrapper {
+.secondaryPage .contentWrapper {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     gap: 20px;
     flex-direction: row;
     width: 80%;
-    position: relative;
+    position: relative;  /* Garantir que o conteúdo possa ser posicionado de maneira flexível */
     z-index: 2; /* Garantir que o conteúdo fique acima da barra amarela */
 }
 
 /* Ajustes na imagem */
-.imageContainer {
-    text-align: center;
-    width: 50%;
-}
-
-.familiaImage {
-    width: 170%;
+.secondaryPage .familiaImage {
+    width: 300%;
     max-width: 600px;
     object-fit: cover;
-    transform: translateY(-8px) translateX(-150px);
+    position: absolute; /* A imagem usa absolute para ser movida livremente */
+    top: -275;  /* Posição inicial, pode ser movida conforme necessário */
+    left: -80; /* Posição inicial, pode ser movida conforme necessário */
+    z-index: 2;  /* Garantir que a imagem fique acima da barra amarela */
 }
 
 /* Contêiner de vídeo */
-.videoContainer {
-    width: 70%;
+.secondaryPage .videoContainer {
+    width: 50%;
+    height: 250px;
+    position: absolute; /* Contêiner de vídeo com position absolute para mover livremente */
+    top: 0; /* Posição inicial, pode ser ajustado */
+    left: 50%; /* Posição inicial, pode ser ajustado */
     display: flex;
     justify-content: center;
     border-radius: 15px;
     padding: 0px;
     box-sizing: border-box;
-    z-index: 2; /* Garantir que o vídeo esteja acima da barra amarela */
-    margin-right: 10px; /* Cria um espaço para evitar que o vídeo sobreponha a barra amarela */
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Ajuste do iframe (vídeo do YouTube) */
+.secondaryPage .videoContainer iframe {
+    width: 100%; /* O vídeo ocupará 100% da largura do contêiner */
+    height: 100%; /* O vídeo ocupará 100% da altura do contêiner */
+    border-radius: 15px;
 }
 
 
-/* Ajuste do vídeo */
-.videoContainer video {
-    transform: translateY(60px) translateX(10px); /* Ajusta a posição do vídeo */
-    width: 100%;
-    height: auto;
-    border-radius: 15px; /* Adiciona borda arredondada diretamente no vídeo */
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para a página terciária */
 .tertiaryPage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* mesma altura que as outras seções */
+    height: 110vh;
     width: 100vw;
     margin: 0;
-    background-image: url('/images/03.png'); // Terceiro background
+    background-image: url('/images/03.png'); /* Terceiro background */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
-}
-
+    position: relative;
+  }
+  
+  .tertiaryPage .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -30%);
+  }
+  
+  .tertiaryPage .logo {
+    height: 230px;
+    width: auto;
+    opacity: 0;
+    animation: fadeInLogo 1s forwards ease-in-out;
+  }
+  
+  /* Caixa no canto direito */
+  .tertiaryPage .boxContainer {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 350px;
+  }
+  
+  /* Estilos da box */
+  .tertiaryPage .box {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 0.8); /* Cor escura com 80% de opacidade */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Estilos para o texto dentro da box */
+  .tertiaryPage .textInsideBox {
+    color: white; /* Cor do texto */
+    font-family: 'Poppins', sans-serif; /* Fonte arredondada */
+    font-weight: 300; /* Peso mais fino */
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 10px 20px;
+    max-width: 460px;
+    word-wrap: break-word;
+    white-space: normal;
+  }
 .quaternaryPage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Altura igual à de outras seções */
+    height: 103vh; /* Altura igual à de outras seções */
     width: 100vw;  /* Largura igual à de outras seções */
     margin: 0;
     padding: 0; /* Certifique-se de que não há padding adicional */
-    background-image: url('/images/04.png'); /* Quarto background */
+    background-image: url('/images/quatro.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     box-sizing: border-box; /* Para garantir que margin e padding não afetem o layout */
+    position: relative; /* Define este contêiner como referência para posicionamento absoluto */
+
+    .mainText {
+        position: absolute; /* Permite reposicionar o título dentro desta seção */
+        top: 15%; /* Posição inicial no topo */
+        left: 56.2%; /* Posiciona o título próximo à esquerda */
+        transform: translate(0, -50%); /* Centraliza verticalmente, mas mantém alinhado à esquerda */
+        font-size: 2.8rem; /* Reduz o tamanho do título */
+        line-height: 1.2; /* Ajusta o espaçamento entre linhas */
+        text-align: left; /* Alinha o texto à esquerda */
+        font-weight: 700; /* Deixa o texto mais grosso (negrito) */
+        font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+    }
+    .subtitle {
+        position: absolute; /* Permite reposicionar o título dentro desta seção */
+        top: 40%; /* Posição inicial no topo */
+        left: 56.2%; /* Posiciona o título próximo à esquerda */
+        transform: translate(0, -50%); /* Centraliza verticalmente, mas mantém alinhado à esquerda */
+        font-size: 1.3rem; /* Reduz o tamanho do título */
+        text-align: left; /* Alinha o texto à esquerda */
+
+        font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+    }
+
+    .logoContainer {
+        position: absolute; /* Permite reposicionar o título dentro desta seção */
+        top: 94%; /* Posição inicial no topo */
+        left: 114%; /* Posiciona o título próximo à esquerda */
+    }
+    
+    .logoContainer img {
+        height: auto; /* Mantém a proporção da imagem */
+        max-width: 130px; /* Define uma largura máxima para a imagem */
+        max-height: 350px; /* Define uma altura máxima para a imagem */
+    }
+
+    .topicoum {
+        position: absolute; /* Permite reposicionar o título dentro desta seção */
+        top: 52%; /* Posição inicial no topo */
+        left: 60%; /* Posiciona o título próximo à esquerda */
+        transform: translate(0, -50%); /* Centraliza verticalmente, mas mantém alinhado à esquerda */
+        font-size: 1.3rem; /* Reduz o tamanho do título */
+        text-align: left; /* Alinha o texto à esquerda */
+
+        font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+    }
+    .topicodois {
+        position: absolute; /* Permite reposicionar o título dentro desta seção */
+        top: 61%; /* Posição inicial no topo */
+        left: 60%; /* Posiciona o título próximo à esquerda */
+        transform: translate(0, -50%); /* Centraliza verticalmente, mas mantém alinhado à esquerda */
+        font-size: 1.3rem; /* Reduz o tamanho do título */
+        text-align: left; /* Alinha o texto à esquerda */
+
+        font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+    }
+    .topicotres {
+        position: absolute; /* Permite reposicionar o título dentro desta seção */
+        top: 71.5%; /* Posição inicial no topo */
+        left: 60%; /* Posiciona o título próximo à esquerda */
+        transform: translate(0, -50%); /* Centraliza verticalmente, mas mantém alinhado à esquerda */
+        font-size: 1.3rem; /* Reduz o tamanho do título */
+        text-align: left; /* Alinha o texto à esquerda */
+
+        font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+    }
+    
+    .topiquatro {
+        position: absolute; /* Permite reposicionar o título dentro desta seção */
+        top: 81.6%; /* Posição inicial no topo */
+        left: 60%; /* Posiciona o título próximo à esquerda */
+        transform: translate(0, -50%); /* Centraliza verticalmente, mas mantém alinhado à esquerda */
+        font-size: 1.3rem; /* Reduz o tamanho do título */
+        text-align: left; /* Alinha o texto à esquerda */
+
+        font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+    }
+
+    .imageContainer {
+        position: absolute; /* Permite reposicionar o título dentro desta seção */
+        top: 10%; /* Posição inicial no topo */
+        left: 0%; /* Posiciona o título próximo à esquerda */
+
+  
+      }
+      
 }
+
 
 
 .quinaryPage {
