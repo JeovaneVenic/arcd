@@ -100,18 +100,123 @@
 }
 
 .secondaryPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* mesma altura que a primeira seção */
-    width: 100vw;
-    margin: 0;
-    background-image: url('/images/02.png'); // Segundo background
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+    background-image: url('/images/02.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
+    padding: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+}
+
+/* Barra amarela horizontal atrás do .paragrafo1 */
+.secondaryPage .paragrafo1::before {
+    content: '';
+    position: absolute;
+    top: -8;  /* Barra posicionada atrás do texto */
+    left: -5.5;
+    width: 103%;
+    height: 36px;  /* Espessura da barra */
+    background-color: yellow;
+    z-index: -1; /* Barra amarela ficará atrás do texto */
+}
+
+/* Classe .bolacha */
+.secondaryPage .paragrafo1 {
+    position: absolute;
+    top: 23.7%;
+    left: 46.6%;
+    transform: translate(0, -50%);
+    font-size: 1.2rem;
+    line-height: 1.2;
+    text-align: left;
+    font-weight: 560;
+    font-family: 'Gilroy', sans-serif; /* Aplica a fonte Poppins */ 
+    color: #000;
+    z-index: 1; /* Texto do .paragrafo1 ficará acima da barra amarela */
+    letter-spacing: 4.5px;
+}
+
+
+    .paragrafo2{
+        position: absolute; 
+        top: 31%; 
+        left: 45.0%; 
+        transform: translate(0, -50%); 
+        font-size: 3.5rem; 
+        line-height: 1.2;
+        text-align: left; 
+        font-weight: 800; 
+        font-family: 'Gilroy', sans-serif; /* Aplica a fonte Poppins */ 
+        letter-spacing: -3px;
+        color:#000
+        
+    }
+
+
+/* Barra amarela à direita */
+.secondaryPage::after {
+    content: ''; 
+    position: absolute; 
+    top: 0;
+    right: 0;
+    width: 170px;
+    height: 100vh;
+    background-color: yellow; 
+    z-index: 1; /* Garante que a barra fique atrás do conteúdo */
+}
+
+/* Contêiner de conteúdo */
+.contentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    flex-direction: row;
+    width: 80%;
+    position: relative;
+    z-index: 2; /* Garantir que o conteúdo fique acima da barra amarela */
+}
+
+/* Ajustes na imagem */
+.imageContainer {
+    text-align: center;
+    width: 50%;
+}
+
+.familiaImage {
+    width: 170%;
+    max-width: 600px;
+    object-fit: cover;
+    transform: translateY(-8px) translateX(-150px);
+}
+
+/* Contêiner de vídeo */
+.videoContainer {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 0px;
+    box-sizing: border-box;
+    z-index: 2; /* Garantir que o vídeo esteja acima da barra amarela */
+    margin-right: 10px; /* Cria um espaço para evitar que o vídeo sobreponha a barra amarela */
+}
+
+
+/* Ajuste do vídeo */
+.videoContainer video {
+    transform: translateY(60px) translateX(10px); /* Ajusta a posição do vídeo */
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Adiciona borda arredondada diretamente no vídeo */
 }
 
 .tertiaryPage {
