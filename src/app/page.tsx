@@ -85,16 +85,26 @@ export default function Home() {
       </div>
 
       <div className={styles.quinaryPage}> {/* Quinta seção com novo background */}
-        <p className={styles.subtitle}>Quinta Seção</p>
-        <h1 className={styles.mainText}>Conteúdo Adicional</h1>
-        <div className={styles.logoContainer}>
-          <img
-            src="/images/logo.png"
-            alt="Logo"
-            className={styles.logo}
-          />
-        </div>
-      </div>
+    
+    
+    <p className={styles.subtitlequintapag}>Entre em contato hoje mesmo e<br />
+    descubra o imóvel dos seus sonhos.</p>
+    
+    <h1 className={styles.tituloquintapag}>EXCLUSIVIDADE <br /> E CONFORTO</h1>
+    
+    {/* Botão com link */}
+    <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer">
+      <button className={styles.btnBlackBox}>SAIBA MAIS</button> {/* Utilizando a classe btnBlackBox */}
+    </a>
+    
+    <img src="/images/logo.png" alt="Logo" className={styles.logo} />
+    
+    <div className={styles.blackBox}>
+      <p className={styles.boxText}>Viva com</p>
+    </div>
+
+  </div>
+  
     </>
   );
 }
